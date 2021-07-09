@@ -7,7 +7,7 @@ def atoi (s)
             ((s_arr[idx - 1] === "+" || s_arr[idx - 1] === "-") || s_to_change.length > 0) &&
             idx != 0
             break 
-        elsif i === ' ' && s_to_change.length > 0
+        elsif i === ' ' && (s_to_change.length > 0 || (s_arr[idx - 1] != ' ' && idx != 0))
             break
         elsif i === ' '||i === "+"
             next 
@@ -28,3 +28,5 @@ def atoi (s)
         return s_to_change
     end
 end
+
+"   +    413"
