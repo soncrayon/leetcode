@@ -28,5 +28,3 @@ def atoi (s)
         return s_to_change
     end
 end
-
-"   +    413"
