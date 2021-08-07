@@ -1,13 +1,13 @@
 class Tree {
-    initialize(){
-        Object.new()
+    constructor(){
+        {}
     }
 
     addNewNodeToTree = (treeNode) => {
         Object.keys(treeNode).forEach((key) => {
-            if (this[key]) {
-                // this[key] = treeNode[key]
-                this.addNewNodeToTree(treeNode[key])
+            if (!this[key]) {
+                this[key] = treeNode[key]
+                // this.addNewNodeToTree(treeNode[key])
             }
             // set up recursive function to check each level of tree for value and if not add to appropriate level
         })
