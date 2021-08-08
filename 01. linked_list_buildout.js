@@ -38,13 +38,24 @@ class LinkedList {
   findNode = (d) => {
       const traverseList = (node) => {
           if (node.data != d) {
-              node = node.next
-              return traverseList(node)
+              return traverseList(node.next)
           } else {
               return node
           }
       }
       return traverseList(this.head)
+  }
+
+  deleteNode = (nodeToDelete) => {
+      const traverseList = (node) => {
+          if (node.next != nodeToDelete) {
+              return traverseList(node.next)
+          } else {
+              return node
+          }
+      }
+      let referenceNode = traverseList(this.head)
+      return referenceNode.next = nodeToDelete.next 
   }
 }
 
@@ -64,7 +75,9 @@ linkedList.addNodeAfterAnotherNode(linkedList.findNode('a'), 'b')
 linkedList.addNodeAfterAnotherNode(linkedList.findNode('c'), 'd')
 linkedList.addNodeAfterAnotherNode(linkedList.findNode('e'), 'f')
 
+linkedList.deleteNode(linkedList.findNode('e'))
 
-console.log(linkedList.findNode('f'))
+
+console.log(linkedList.findNode('d'))
 
 
