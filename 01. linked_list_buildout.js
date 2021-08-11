@@ -30,8 +30,7 @@ class LinkedList {
         return node;
       }
     };
-    let newNode = new Node(d);
-    let lastNode = traverseList(this.head);
+    let newNode = new Node(d), lastNode = traverseList(this.head);
     lastNode.next = newNode;
   };
 
