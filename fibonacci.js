@@ -4,7 +4,7 @@ const printFibonacci = (prevSum = 0, currSum = 1) => {
     console.log(newSum)
     prevSum = currSum
     currSum = newSum 
-    if (newSum < 500){
+    if (newSum < 500){  
         printFibonacci(prevSum, currSum)
     }
 }
