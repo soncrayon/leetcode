@@ -1,5 +1,4 @@
 const reverseInteger = (x) => {
-    if (`${x}`.length > 10) return 0 
     let numToRev = `${x}`
     let numArr = numToRev.split('')
     if ( x < 0 ) numArr.shift()
