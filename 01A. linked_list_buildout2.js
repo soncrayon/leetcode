@@ -74,8 +74,40 @@ class LinkedList {
         return prev 
     }
 
+    deleteNthNode = (n) => {
+        if (n === 0) return this.head
+        if (n === 1) {
+            this.head = this.head.next 
+            return this.head
+        }
+        let nodeToEdit = this.head
+        for (let i = 0; i < n - 2; i++){
+            nodeToEdit = nodeToEdit.next
+        }
+        nodeToEdit.next = nodeToEdit.next.next
+        return this.head
+    }
+
+    deleteNthNodeFromEnd = (n) => {
+        if (this.head.next === null) {
+            this.head = this.head.next
+        }
+        let firstPointer = this.head, secondPointer = this.head
+        for (let i = 0; i < n; i++){
+            firstPointer = firstPointer.next
+        }
+        while (firstPointer.next != null){
+            firstPointer = firstPointer.next
+            secondPointer = secondPointer.next
+        }
+        secondPointer.next = secondPointer.next.next 
+        return head
+    }
+
 
 }
+
+// hey --> look --> this --> sure --> thing --> alright
 
 const node1 = new Node('look at')
 const linkedList1 = new LinkedList(node1)
@@ -89,6 +121,9 @@ linkedList1.deleteNode('ok')
 linkedList1.addNode('alright')
 linkedList1.addNodeToFront("hey!")
 linkedList1.addNodeAfterAnotherNode("this...here!", "look at")
+console.log(linkedList1.traverseAndLog())
+console.log(" ")
+linkedList1.deleteNthNodeFromEnd(1)
 
 console.log(linkedList1.traverseAndLog())
 
