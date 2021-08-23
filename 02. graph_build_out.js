@@ -22,12 +22,12 @@ const depthFirstRecursive = (graph, src) => {
 
 // breadth first search using a queue (FIFO)
 const breadthFirstSearch = (graph, src) => {
-    const stack = [ src ]
-    while (stack.length > 0) {
+    const queue = [ src ]
+    while (queue.length > 0) {
         const current = stack.shift()
         console.log(current)
         for (let neighbor of graph[current]){
-            stack.push(neighbor)
+            queue.push(neighbor)
         }
     }
 }
