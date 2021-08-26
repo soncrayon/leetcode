@@ -1,3 +1,10 @@
+const square_arr = (arr) => {
+    for (let i = 0; i < arr.length; i++){
+		arr[i] = arr[i]**2; 
+	}
+    return quickSort(arr);
+}
+
 const quickSort = (arr) => {
     if ( arr.length === 1) return arr; 
 
@@ -22,4 +29,4 @@ const quickSort = (arr) => {
     }
 }
 
-console.log( quickSort([6,5,3,7,9,2,1,4]) ) 
+console.log( square_arr([6,5,-3,7,9,2,1,4]) ) 
