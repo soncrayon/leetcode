@@ -25,5 +25,5 @@ fibMemo = (n, memo = {}) => {
 }
 
 
-console.log(fibMemo(100))
+console.log(fibMemo(5))
   

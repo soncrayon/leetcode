@@ -15,14 +15,6 @@ const doMath = (str) => {
         valHash[ltr] ? valHash[ltr + ltr] = int : valHash[ltr] = int; 
     }
 
-    const loop_through = (obj) => {
-        for (itm in obj){
-            console.log(itm);
-            console.log(obj[itm]); 
-        }
-    }
-    
-    loop_through(valHash); 
     return valHash; 
 }
 

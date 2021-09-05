@@ -4,7 +4,7 @@ const connectedComponents = (graph) => {
     for (let node in graph){
         if(explore(graph, node, visited) === true) count++
     }
-    count 
+    return count 
 }
 
 const explore = (graph, curr, visited ) => {
