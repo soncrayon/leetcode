@@ -41,6 +41,8 @@ class BinarySearchTree {
          return this.findNode( val ) ? true : false   
      }
 
+    //  need delete node function here
+
 }
 
 const binaryTree1 = new BinarySearchTree ( new BinarySearchTreeNode(9) )
