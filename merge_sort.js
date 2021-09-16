@@ -1,6 +1,5 @@
 const mergeSort = (arr) => {
     if ( arr.length <= 1 ) return arr; 
-    console.log(arr)
 
     const middleIndex = Math.floor(arr.length / 2); 
     const arr1 = arr.slice(0, middleIndex);
@@ -17,15 +16,10 @@ const merge = (arr1, arr2) => {
             mergedArr.push(Math.min(arr1[i], arr2[j]));
             arr1[i] < arr2[j] ? i++ : j++; 
         } else if ( i < arr1.length ) {
-            // mergedArr.push(arr1[i]); 
             mergedArr = [...mergedArr, ...arr1.slice(i)]; 
-            i = arr1.length; 
-            // i++; 
         } else {
-            // mergedArr.push(arr2[j]); 
             mergedArr = [...mergedArr, ...arr2.slice(j)]; 
             j = arr2.length; 
-            // j++; 
         }
     }
     return mergedArr; 
@@ -41,4 +35,4 @@ const merge = (arr1, arr2) => {
 
 // console.log ( merge([1,4], [2,3,5,6]) ); 
 
-console.log ( mergeSort([6,5,3,7,9,2,1,4,8]) ); 
+console.log ( mergeSort([6,5,3,7,9,2,1,4,8]) );  
