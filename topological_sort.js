@@ -25,3 +25,4 @@ const topological_sort = function(vertices, edges) {
     }
     return graph; 
 }
+
