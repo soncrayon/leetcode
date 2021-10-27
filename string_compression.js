@@ -17,4 +17,27 @@ const stringCompression = (str) => {
     return valuesStr
 }
 
-console.log(stringCompression('aabcccccaaa'))
+const stringCompression2 = (str) => {
+    if ( str.length === 0 ) return ''; 
+    let compressedString = ''; 
+    let count = 1, currLetter = str[0]; 
+    for (let i = 1; i < str.length; i++ ){
+        if ( str[i] === currLetter && count === 9) {
+            compressedString = compressedString + currLetter + count; 
+            count = 1; 
+        } else if ( str[i] === currLetter ){
+            count++;
+        } else {
+            compressedString = compressedString + currLetter + count; 
+            count = 1;
+            currLetter = str[i]; 
+        }
+    }
+    
+    compressedString = compressedString + currLetter + count; 
+    if ( compressedString.length >= str.length ) return str; 
+    return compressedString; 
+}
+
+console.log(stringCompression2('aabccccccccccccccckkkkkkkkkkkkkaaa'))
+console.log(stringCompression2('hello'))
