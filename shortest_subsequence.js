@@ -14,14 +14,13 @@ const shortestSuperSequence = ( shorterArray, longerArray ) => {
         if ( windowEnd - windowStart < shortestLength ){
             sequence[0] = windowStart;
             sequence[1] = windowEnd; 
-            console.log(sequence); 
         }
         windowEnd++;
         windowStart++; 
     }
    return sequence; 
 }
-
+ 
 const short = [1, 5, 9]; 
 const long = [7, 5, 9, 0, 2, 1, 3, 5, 7, 9, 1, 1, 5, 8, 8, 9, 7]; 
 
