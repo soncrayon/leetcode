@@ -1,14 +1,15 @@
-const maxArea = (height) => {
-    let maxWater = 0; 
-    let i = 0, j = height.length - 1;
-    while ( i < j ){
-        let currWater = ( j - i ) * Math.min( height[i], height[j]);
-        maxWater = Math.max( maxWater, currWater );
-        if ( height[i] < height[j] ){
-            i++;
+var maxArea = function(height) {
+    let maxArea = 0; 
+    let windowStart = 0, windowEnd = height.length - 1; 
+    while ( windowStart < windowEnd ){
+        let currentArea = ( windowEnd - windowStart ) * 
+            Math.min( height[windowEnd], height[windowStart]); 
+        maxArea = Math.max( maxArea, currentArea ); 
+        if ( height[windowStart] < height[windowEnd]){
+            windowStart++; 
         } else {
-            j--; 
+            windowEnd--; 
         }
     }
-    return maxWater;
-}
+    return maxArea; 
+};
