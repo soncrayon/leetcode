@@ -17,3 +17,22 @@ const lengthOfLongestSubstring = (s) => {
     }
 	return Math.max( longestSubstr, substring.length);
 }
+
+//refactor with sliding window below
+
+
+ const lengthOfLongestSubstring = (s) => {
+    const hash = {}; 
+    let longestStringLength = -Infinity; 
+    let windowStart = 0; 
+    for ( let windowEnd = 0; windowEnd < s.length; windowEnd++ ){
+        hash[s[windowEnd]] ? hash[s[windowEnd]] ++ : hash[s[windowEnd]] = 1; 
+        while ( hash[s[windowEnd]] > 1 && windowStart < windowEnd ){
+            longestStringLength = Math.max ( longestStringLength, windowEnd - windowStart); 
+            hash[s[windowStart]]--; 
+            windowStart++;
+        }
+        longestStringLength = Math.max ( longestStringLength, windowEnd - windowStart + 1); 
+    }
+    return longestStringLength === -Infinity ? 0 : longestStringLength; 
+};
