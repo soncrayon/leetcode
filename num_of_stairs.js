@@ -1,5 +1,5 @@
 const numOfWays = ( stairs, steps = 0 ) => {
-	if ( stairs < 0 ) return 0;
+	// if ( stairs < 0 ) return 0;
 	if ( stairs === 0 ) return 1;
     let count = 0; 
 	for ( let i = 1; i < steps + 1; i++ ){
