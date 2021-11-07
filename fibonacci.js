@@ -19,7 +19,7 @@ fib = (n, prevSum = 0, currSum = 1) => {
 
 fibMemo = (n, memo = {}) => {
     if (n in memo) return memo[n]
-    if ( n < 2 ) return 1
+    if ( n < 3 ) return 1
     memo[n] = fibMemo( n - 1, memo ) + fibMemo( n - 2, memo )
     return memo[n]
 }

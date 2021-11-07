@@ -20,10 +20,8 @@ const removeIslands = (matrix) => {
       for ( let r = 0; r < matrix.length; r++ ){
           for ( let c = 0; c < matrix[0].length; c++ ){
               if ( matrix[r][c] === 2 ) {
-                  matrix[r][c] = 1;
-              } else if ( matrix[r][c] === 1 ){
-                  matrix[r][c] = 0; 
-              }
+                  matrix[r][c] = 0;
+              } 
           }
       }
   }
