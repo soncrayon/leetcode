@@ -4,12 +4,13 @@ const palindromePermutation = ( str ) => {
     for (let i = 0; i < str.length; i++ ){
         if ( str[i] !== " "){
             hash[str[i]] ? hash[str[i]]++ : hash[str[i]] = 1; 
+            charCount++; 
         }  
     }
 
-    for ( let ltr in hash ){
-        charCount += hash[ltr]; 
-    }
+    // for ( let ltr in hash ){
+    //     charCount += hash[ltr]; 
+    // }
     let count = charCount % 2 === 0 ? "even" : "odd"; 
  
     for (let ltr in hash ){
@@ -30,4 +31,4 @@ const palindromePermutation = ( str ) => {
     return true; 
 }
 
-console.log(palindromePermutation('tactb coa'))
+console.log(palindromePermutation('ab bayt')) 
