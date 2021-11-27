@@ -29,9 +29,8 @@ const inOrderTraversal = (root, array) => {
     if ( !root ) return; 
     array.push(inOrderTraversal(root.left, array));
     array.push(inOrderTraversal(root, array));
-    array.push(inOrderTraversal(root.right, array);
+    array.push(inOrderTraversal(root.right, array));
     return array; 
-
 }
 
 // pre-order tree traversal (ROOT, LEFT, RIGHT)
