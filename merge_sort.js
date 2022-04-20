@@ -17,12 +17,15 @@ const merge = (arr1, arr2) => {
             arr1[i] < arr2[j] ? i++ : j++; 
         } else if ( i < arr1.length ) {
             mergedArr = [...mergedArr, ...arr1.slice(i)]; 
+            // i = arr1.length;
+            break;
         } else {
             mergedArr = [...mergedArr, ...arr2.slice(j)]; 
-            j = arr2.length; 
+            // j = arr2.length; 
+            break;
         }
     }
-    return mergedArr; 
+    return mergedArr;
 }
 
 // set the base case in the main function to an arr of length 1;
