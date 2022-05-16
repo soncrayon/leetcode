@@ -32,7 +32,7 @@ const breadthFirstSearch = (graph, src) => {
     }
 }
 
-// no recursive solution for breadth first search 
+// no recursive solution for breadth first search b/c recursion will always use a stack
 
 // set up adjacency list to represent graph
 const graph = {
